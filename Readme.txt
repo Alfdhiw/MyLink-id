@@ -1,7 +1,6 @@
-Thanks for downloading this template!
+Update V1.0 Open Source Website Landing Page
 
-Template Name: Arsha
-Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+Template Name: MyLink
 Author: BootstrapMade.com
 Edit: Alfdhiw
 License: https://bootstrapmade.com/license/
