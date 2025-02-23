@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyLink - Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #37517e, #47b2e4);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .register-container h2 {
+            color: #37517e;
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background: #47b2e4;
+            border: none;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #4f7fdf;
+        }
+
+        .btn-google {
+            background: #f0f0f0;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-google img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .login-link {
+            color: #47b2e4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-container">
+        <h2 style="text-align: center;">MyLink</h2>
+        <p class="text-muted" style="text-align: center;">Create your account</p>
+
+        <!-- Form Registrasi -->
+        <form id="registerForm">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" id="fullName" class="form-control" placeholder="Your full name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="Your email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Create a password">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+
+        <hr>
+        <button class="btn btn-google w-100 mt-2">
+            <img src="https://lynk.id/static/assets/imgs/google.svg" alt="Google">
+            Sign Up with Google
+        </button>
+
+        <p class="mt-3" style="text-align: center;">Already have an account? <a href="login.html"
+                class="login-link">Login</a></p>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Mencegah form submit langsung
+
+            let fullName = document.getElementById("fullName").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (fullName === "" || email === "" || password === "" || confirmPassword === "") {
+                alert("Harap isi semua kolom sebelum mendaftar!");
+            } else if (!email.match(emailPattern)) {
+                alert("Harap masukkan alamat email yang valid!");
+            } else if (password.length < 6) {
+                alert("Password harus memiliki minimal 6 karakter!");
+            } else if (password !== confirmPassword) {
+                alert("Konfirmasi password tidak cocok!");
+            } else {
+                alert("Registrasi berhasil! (Simulasi)");
+                // Simulasi redirect setelah registrasi berhasil
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

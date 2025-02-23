@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyLink - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #37517e, #47b2e4);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 10px 40px 10px rgba(1, 1, 1, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-container h2 {
+            color: #37517e;
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background: #47b2e4;
+            border: none;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #4f7fdf;
+        }
+
+        .forgot-password {
+            color: #47b2e4;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 160px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .btn-google {
+            background: #f0f0f0;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-google img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .register-link {
+            color: #47b2e4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-link:hover {
+            text-decoration: underline;
+        }
+
+        .register-text {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container shadow-lg">
+        <h2 style="text-align: center;">MyLink</h2>
+        <p class="text-muted mb-3" style="text-align: center;">Sign in to your account</p>
+
+        <!-- Form Login -->
+        <form clas="form-login" id="loginForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username / E-mail</label>
+                <input type="text" id="username" class="form-control" placeholder="Your username or email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label" required>Password<a href="#" class="forgot-password">Forgot
+                        Password?</a></label>
+                <input type="password" id="password" class="form-control" placeholder="Your password">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Sign In</button>
+        </form>
+        <hr>
+        <button class="btn btn-google w-100 mt-2">
+            <img src="https://lynk.id/static/assets/imgs/google.svg" alt="Google">
+            Continue with Google
+        </button>
+
+        <p class="mt-1 register-text">Don't have an account? <a href="register.html" class="register-link">Register</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Mencegah form submit langsung
+
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (username === "" || password === "") {
+                alert("Harap isi semua kolom sebelum masuk!");
+            } else {
+                alert("Login berhasil! (Simulasi)");
+                // Simulasi redirect setelah login berhasil
+                window.location.href = "dashboard.html";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
